@@ -33,15 +33,15 @@ run_postprocess() {
 
     # 正确顺序：归一化 → 校验 → 审计 → 自动修复 → 重建CSV → 再次校验
     echo "[1/6] 归一化 section 名 + 标记综述论文..."
-    python3 normalize_md.py
+    python3 scripts/normalize_md.py
 
     echo ""
     echo "[2/6] 模板校验..."
-    python3 validate.py 2>&1 | tee output/validate_report.txt
+    python3 scripts/validate.py 2>&1 | tee output/validate_report.txt
 
     echo ""
     echo "[3/6] 事实审计..."
-    python3 audit.py 2>&1 | tee output/audit_report.txt
+    python3 scripts/audit.py 2>&1 | tee output/audit_report.txt
     HIGH_COUNT=$(grep -c "^    !!" output/audit_report.txt 2>/dev/null || echo 0)
 
     echo ""
@@ -65,20 +65,20 @@ run_postprocess() {
 PROMPT
 )"
         echo "  自动修正完成，重新审计..."
-        python3 audit.py 2>&1 | tail -5
+        python3 scripts/audit.py 2>&1 | tail -5
     fi
 
     echo ""
     echo "[4/6] 自动修正后重新归一化..."
-    python3 normalize_md.py
+    python3 scripts/normalize_md.py
 
     echo ""
     echo "[5/6] 重建 CSV (UTF-8 BOM)..."
-    python3 rebuild_csv.py
+    python3 scripts/rebuild_csv.py
 
     echo ""
     echo "[6/6] 最终校验..."
-    python3 validate.py 2>&1 | tail -5
+    python3 scripts/validate.py 2>&1 | tail -5
 
     echo ""
     echo "=========================================="

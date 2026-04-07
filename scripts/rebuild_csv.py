@@ -5,7 +5,7 @@ import os
 import re
 import csv
 
-OUTPUT_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "output")
+OUTPUT_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "output", "papers")
 
 def extract_field(content, field_name):
     """从 MD 表格中提取字段值"""
@@ -111,7 +111,7 @@ def main():
             skipped.append(f"{fname} (error: {e})")
 
     # 写入 CSV
-    csv_path = os.path.join(OUTPUT_DIR, 'papers_database.csv')
+    csv_path = os.path.join(os.path.dirname(OUTPUT_DIR), 'papers_database.csv')  # output/papers_database.csv
     fieldnames = ['文件名', '标题', '作者', '期刊名', '年份', '卷号', '期号', '页码', 'DOI', '关键词', '摘要']
 
     with open(csv_path, 'w', encoding='utf-8-sig', newline='') as f:

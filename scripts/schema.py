@@ -8,9 +8,9 @@ import os
 import re
 
 # === 路径常量 ===
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-OUTPUT_DIR = os.path.join(BASE_DIR, "output")
-CSV_PATH = os.path.join(OUTPUT_DIR, "papers_database.csv")
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))  # scripts/ 的上一级
+OUTPUT_DIR = os.path.join(BASE_DIR, "output", "papers")  # 论文 MD 在 output/papers/
+CSV_PATH = os.path.join(BASE_DIR, "output", "papers_database.csv")  # CSV 在 output/ 根目录
 
 # === 论文 MD 的 canonical section 名 ===
 REQUIRED_SECTIONS = [

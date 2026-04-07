@@ -27,7 +27,7 @@ import os
 import argparse
 from collections import Counter
 
-OUTPUT_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "output")
+OUTPUT_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "output", "papers")
 CSV_PATH = os.path.join(OUTPUT_DIR, "papers_database.csv")
 
 def api_get(url, retries=2):

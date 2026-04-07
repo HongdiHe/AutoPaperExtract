@@ -11,3 +11,9 @@ state/
 
 # 临时文件
 *.tmp
+
+# Python 缓存
+__pycache__/
+
+# 运行时报告
+output/reports/*.txt

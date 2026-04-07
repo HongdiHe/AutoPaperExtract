@@ -5,7 +5,7 @@ import os
 import re
 import sys
 
-OUTPUT_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "output")
+OUTPUT_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "output", "papers")
 
 REQUIRED_SECTIONS = [
     '## 基本信息',
