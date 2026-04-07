@@ -107,10 +107,15 @@ def main():
     medium_count = 0
     low_count = 0
 
-    for fname in sorted(os.listdir(OUTPUT_DIR)):
-        if not fname.endswith('.md') or fname in ('quality_report.md',):
-            continue
-        filepath = os.path.join(OUTPUT_DIR, fname)
+    try:
+        from schema import list_paper_mds
+        paper_files = list_paper_mds()
+    except ImportError:
+        paper_files = [os.path.join(OUTPUT_DIR, f) for f in sorted(os.listdir(OUTPUT_DIR))
+                       if f.endswith('.md') and f not in ('quality_report.md',)]
+
+    for filepath in paper_files:
+        fname = os.path.basename(filepath)
         issues = audit_file(filepath)
         if issues:
             all_issues[fname] = issues
