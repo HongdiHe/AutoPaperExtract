@@ -5,7 +5,7 @@
 #   bash start.sh enrich   — 补充模式：补充不完整的 MD 文件
 #   bash start.sh review   — 综述模式：迭代式研究+写作（autoresearch 风格）
 
-WORK_DIR="/mnt/c/Users/hehon/claude work place/配位驱动自组装/try"
+WORK_DIR="$(cd "$(dirname "$0")" && pwd)"
 cd "$WORK_DIR" || exit 1
 
 TOTAL_PDF=$(find . -name '*.pdf' -type f | grep -cv '(duplicate)')

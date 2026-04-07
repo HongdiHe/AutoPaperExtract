@@ -4,8 +4,8 @@
 import os
 import re
 
-OUTPUT_DIR = "/mnt/c/Users/hehon/claude work place/配位驱动自组装/try/output"
-BASE_DIR = "/mnt/c/Users/hehon/claude work place/配位驱动自组装/try"
+OUTPUT_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "output")
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 # 建立 PDF 子目录映射
 PDF_SUBDIR = {}

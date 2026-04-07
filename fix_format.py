@@ -4,11 +4,11 @@
 import os
 import re
 
-OUTPUT_DIR = "/mnt/c/Users/hehon/claude work place/配位驱动自组装/try/output"
+OUTPUT_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "output")
 
 # PDF 文件名 -> 正确的相对路径映射
 PDF_DIR_MAP = {}
-BASE_DIR = "/mnt/c/Users/hehon/claude work place/配位驱动自组装/try"
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 for root, dirs, files in os.walk(BASE_DIR):
     for f in files:
         if f.endswith('.pdf'):

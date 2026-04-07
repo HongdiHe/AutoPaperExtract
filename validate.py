@@ -5,7 +5,7 @@ import os
 import re
 import sys
 
-OUTPUT_DIR = "/mnt/c/Users/hehon/claude work place/配位驱动自组装/try/output"
+OUTPUT_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "output")
 
 REQUIRED_SECTIONS = [
     '## 基本信息',

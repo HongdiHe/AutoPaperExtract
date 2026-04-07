@@ -8,7 +8,7 @@ import os
 import re
 
 # === 路径常量 ===
-BASE_DIR = "/mnt/c/Users/hehon/claude work place/配位驱动自组装/try"
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 OUTPUT_DIR = os.path.join(BASE_DIR, "output")
 CSV_PATH = os.path.join(OUTPUT_DIR, "papers_database.csv")
 

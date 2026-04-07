@@ -11,8 +11,8 @@
 - **文献数据库**: `output/papers_database.csv` (84 篇论文)
 - **详细笔记**: `output/*.md` (每篇论文的 MD 文件)
 - **PDF 原文**: `./三联吡啶/`, `./单吡啶/`, `./联吡啶/`
-- **领域综述参考**: `/mnt/c/Users/hehon/Downloads/2D金属超分子综述_信息提取.md`
-- **综述写作 skill**: `/mnt/c/Users/hehon/claude work place/配位驱动自组装/.claude/skills/literature-review/SKILL.md`
+- **领域综述参考**: `[项目外] 2D金属超分子综述_信息提取.md`
+- **综述写作 skill**: `[项目外] .claude/skills/literature-review/SKILL.md`
 - **文献发现工具**: `discover.py`（引文图谱 + 关键词搜索 + 前沿追踪）
 - **文献发现报告**: `output/discovery_report.md`
 

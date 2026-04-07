@@ -5,7 +5,7 @@ import os
 import re
 import csv
 
-OUTPUT_DIR = "/mnt/c/Users/hehon/claude work place/配位驱动自组装/try/output"
+OUTPUT_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "output")
 
 def extract_field(content, field_name):
     """从 MD 表格中提取字段值"""
