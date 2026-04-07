@@ -1,0 +1,13 @@
+# PDF 文件太大不上传
+*.pdf
+
+# Python 缓存
+__pycache__/
+*.pyc
+
+# 运行时产物
+output/.pipeline.lock
+state/
+
+# 临时文件
+*.tmp
